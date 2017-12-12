@@ -53,11 +53,6 @@ public class DetailsActivity extends AppCompatActivity {
         }
     }
 
-    @OnClick(R.id.home_button)
-    public void onHomeClick () {
-        onBackPressed();
-    }
-
     @Override
     public void onBackPressed()
     {

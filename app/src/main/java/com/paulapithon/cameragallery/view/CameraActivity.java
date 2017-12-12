@@ -71,15 +71,12 @@ public class CameraActivity extends AppCompatActivity {
     private void checkDeviceCamera(){
         Camera camera = null;
 
-        for(int cameraId = 0; cameraId <= Camera.getNumberOfCameras(); cameraId++){
-            try {
-                camera = Camera.open(cameraId);
-                if(camera != null){
-                    isCameraConnected = true;
-                    break;
-                }
-            }catch (RuntimeException e){ isCameraConnected = false; }
-        }
+        try {
+            camera = Camera.open(0);
+            if(camera != null){
+                isCameraConnected = true;
+            }
+        } catch (RuntimeException e){ isCameraConnected = false; }
 
         if (isCameraConnected){
             mCamera = camera;
